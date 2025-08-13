@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
-
+import { apiRegister } from "../api/auth";
 function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [showPassword, setShowPassword] = useState(false);
@@ -21,8 +21,11 @@ function Register() {
     setErrorMsg(null);
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", form);
+      // await axios.post("http://localhost:5000/api/auth/register", form);
+      const response = await apiRegister(form.name, form.email, form.password);
 
+       console.log("Register success:", response.data);
+       
       navigate("/login");
     } catch (err: any) {
       const message =
