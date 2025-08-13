@@ -1,5 +1,29 @@
 @import "tailwindcss";
 
+/* Force light mode - Override browser dark mode */
+:root {
+  color-scheme: light only;
+}
+
+* {
+  color-scheme: light;
+}
+
+/* Ensure all elements use light background */
+html, body, #root {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Override any dark mode styles */
+@media (prefers-color-scheme: dark) {
+  * {
+    background-color: initial !important;
+    color: initial !important;
+  }
+}
+
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
