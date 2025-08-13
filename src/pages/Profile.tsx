@@ -690,7 +690,7 @@ export default function ProfilePage() {
                 <button
                   onClick={handleSaveProfile}
                   disabled={saving}
-                  className="px-6 py-2 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-70"
+                  className="px-6 py-2 !bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-70"
                 >
                   {saving ? "Đang lưu..." : "Lưu"}
                 </button>
