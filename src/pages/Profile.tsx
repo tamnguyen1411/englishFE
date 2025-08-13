@@ -44,7 +44,7 @@ export default function ProfilePage() {
 
   // ====== Posts list state ======
   const [items, setItems] = useState<any[]>([]);
-  const [total, setTotal] = useState(0);
+  // const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [q, setQ] = useState("");
   const [sort, setSort] = useState<"new" | "top">("new");
@@ -52,7 +52,7 @@ export default function ProfilePage() {
 
   // Unused in bản này nhưng giữ nếu sau cần mở modal tạo bài
 
-  const [editing, setEditing] = useState<any | null>(null);
+  // const [editing, setEditing] = useState<any | null>(null);
 
   const navigate = useNavigate();
 
@@ -186,7 +186,7 @@ export default function ProfilePage() {
 
       setItems(list);
       // Nếu BE trả total theo toàn bộ hệ thống, ta dùng chiều dài list đã lọc
-      setTotal(res.data?.total ?? list.length);
+      // setTotal(res.data?.total ?? list.length);
     } catch (error) {
       console.error("Error loading prompts:", error);
       toast.error("Không tải được danh sách bài viết");
@@ -526,7 +526,7 @@ export default function ProfilePage() {
                             p.createdBy ||
                             p.userId) === meId
                         }
-                        onEdit={setEditing}
+                        onEdit={() => console.log("Edit not implemented")}
                         onDelete={async (id: string) => {
                           try {
                             await deletePrompt(id);

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { apiRegister } from "../api/auth";
 function Register() {
@@ -25,7 +25,7 @@ function Register() {
       const response = await apiRegister(form.name, form.email, form.password);
 
        console.log("Register success:", response.data);
-       
+
       navigate("/login");
     } catch (err: any) {
       const message =

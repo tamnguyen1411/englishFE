@@ -7,7 +7,7 @@ import {
   updatePrompt,
   upvotePrompt,
 } from "../api/prompt";
-import CommentList from "./CommentList";
+
 
 export default function PromptPage() {
   const [items, setItems] = useState<any[]>([]);
